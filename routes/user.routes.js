@@ -14,6 +14,7 @@ const {
   userByIdExists,
 } = require("../helpers/db-validators");
 const { validateFields } = require("../middlewares/validate-fields");
+const validateJWT = require("../middlewares/validate-jwt");
 
 const router = Router();
 
@@ -53,6 +54,7 @@ router.put(
 router.delete(
   "/:id",
   [
+    validateJWT,
     check("id", "El ID no es valido").isMongoId(),
     check("id").custom(userByIdExists),
     validateFields,

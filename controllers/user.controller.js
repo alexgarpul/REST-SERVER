@@ -94,7 +94,7 @@ const deleteUser = async (req = request, res = response) => {
     // const deletedUSer =  await User.findByIdAndDelete(id)
 
     // Borrado suave
-    const deletedUSer = await User.findByIdAndUpdate(
+    const deletedUser = await User.findByIdAndUpdate(
       id,
       { status: false },
       { new: true }
