@@ -7,4 +7,4 @@ const RoleSchema = Schema({
     }
 })
 
-module.exports = model('roles', RoleSchema)
+module.exports = model('Role', RoleSchema)
